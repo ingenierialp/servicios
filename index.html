@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Pantalla Completa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: black;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden; /* Elimina barras de scroll */
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* El GIF cubre toda la pantalla sin deformarse */
+            display: block;
+        }
+        
+        /* Opcional: si prefieres que el GIF se estire completamente (puede deformarse) */
+        /* object-fit: fill; */
+        
+        /* Opcional: si prefieres que se vea completo pero con bordes negros */
+        /* object-fit: contain; */
+    </style>
+</head>
+<body>
+    <img src="servicio_de_ingenieria.gif" alt="GIF Pantalla Completa">
+</body>
+</html>
