@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualización de Datos del Servicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Visualización de Datos de Servicios</title>
     <style>
-        /* Reseteo básico y tipografía */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -19,73 +18,68 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 10px; /* Reducido para dar más espacio en móviles */
         }
 
-        /* Contenedor principal (Tarjeta) */
         .card-container {
             background-color: #ffffff;
             border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             width: 100%;
-            max-width: 900px; /* Controla el ancho máximo en pantallas grandes */
-            overflow: hidden;
-            padding: 24px;
-            transition: transform 0.3s ease;
+            /* Usamos max-width para escritorio, pero en móvil ocupará el 100% disponible */
+            max-width: 900px; 
+            padding: 16px; /* Ajustado para pantallas chicas */
+            margin: auto;
         }
 
-        .card-container:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Encabezado opcional para contextualizar el GIF */
         .card-header {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             text-align: center;
         }
 
         .card-header h2 {
             color: #2c3e50;
-            font-size: 1.5rem;
-            margin-bottom: 8px;
+            font-size: 1.3rem;
+            margin-bottom: 6px;
         }
 
         .card-header p {
             color: #7f8c8d;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
 
-        /* Contenedor Responsive del GIF */
+        /* CONTENEDOR DEL GIF: Forzamos el control del ancho */
         .gif-wrapper {
-            position: relative;
             width: 100%;
+            max-width: 100%;
+            overflow: hidden; /* Evita que cualquier desborde rompa la pantalla */
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #fafafa;
             border: 1px solid #e1e8ed;
             border-radius: 8px;
-            overflow: hidden;
         }
 
-        /* El truco de la responsividad */
+        /* EL GIF: Esta configuración obliga a la imagen a adaptarse */
         .gif-wrapper img {
-            width: 100%;
-            height: auto;
+            width: 100% !important;   /* Obliga a ocupar todo el ancho del contenedor */
+            max-width: 100% !important;
+            height: auto !important;  /* Recalcula la altura proporcionalmente para no deformar */
             display: block;
-            object-fit: contain; /* Asegura que no se deforme */
         }
 
-        /* Ajustes específicos para pantallas muy chicas (Móviles) */
+        /* Media query específico para asegurar pantallas muy pequeñas */
         @media (max-width: 480px) {
             body {
-                padding: 10px;
+                padding: 5px;
             }
             .card-container {
-                padding: 16px;
+                padding: 12px;
+                border-radius: 8px;
             }
             .card-header h2 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -95,11 +89,11 @@
     <div class="card-container">
         <div class="card-header">
             <h2>Métricas de Prestación de Servicios</h2>
-            <p>Monitoreo de rendimiento y analítica empresarial en tiempo real</p>
+            <p>Monitoreo de rendimiento y analítica empresarial</p>
         </div>
 
         <div class="gif-wrapper">
-            <img src="servicio_de_ingenieria.gif" alt="Dashboard de datos de la empresa de servicios">
+            <img src="servicio_de_ingenieria.gif" alt="Dashboard de datos">
         </div>
     </div>
 
