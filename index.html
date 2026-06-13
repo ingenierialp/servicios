@@ -18,7 +18,9 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 10px; /* Reducido para dar más espacio en móviles */
+            padding: 15px; 
+            /* Evita por completo el desborde horizontal en móviles */
+            overflow-x: hidden; 
         }
 
         .card-container {
@@ -26,33 +28,35 @@
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             width: 100%;
-            /* Usamos max-width para escritorio, pero en móvil ocupará el 100% disponible */
             max-width: 900px; 
-            padding: 16px; /* Ajustado para pantallas chicas */
+            padding: 24px; 
             margin: auto;
+            /* Fuerza a la tarjeta a encogerse en pantallas pequeñas */
+            flex-shrink: 1;
+            min-width: 0; 
         }
 
         .card-header {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             text-align: center;
         }
 
         .card-header h2 {
             color: #2c3e50;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 6px;
         }
 
         .card-header p {
             color: #7f8c8d;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
-        /* CONTENEDOR DEL GIF: Forzamos el control del ancho */
+        /* CONTENEDOR DEL GIF */
         .gif-wrapper {
             width: 100%;
-            max-width: 100%;
-            overflow: hidden; /* Evita que cualquier desborde rompa la pantalla */
+            overflow: hidden; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -61,25 +65,30 @@
             border-radius: 8px;
         }
 
-        /* EL GIF: Esta configuración obliga a la imagen a adaptarse */
+        /* EL GIF RESPONSIVO */
         .gif-wrapper img {
-            width: 100% !important;   /* Obliga a ocupar todo el ancho del contenedor */
-            max-width: 100% !important;
-            height: auto !important;  /* Recalcula la altura proporcionalmente para no deformar */
+            width: 100%;
+            max-width: 100%;
+            height: auto;
             display: block;
+            object-fit: contain; /* Asegura que la imagen se mantenga en proporción */
         }
 
-        /* Media query específico para asegurar pantallas muy pequeñas */
+        /* Media query optimizado para smartphones */
         @media (max-width: 480px) {
             body {
-                padding: 5px;
+                padding: 10px;
+                align-items: flex-start; /* Mejor visualización si el contenido es largo */
             }
             .card-container {
-                padding: 12px;
+                padding: 16px;
                 border-radius: 8px;
             }
             .card-header h2 {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
+            }
+            .card-header p {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -88,7 +97,7 @@
 
     <div class="card-container">
         <div class="card-header">
-            <h2>PRUEBA 02<h2>
+            <h2>PRUEBA 03</h2> 
             <p>Monitoreo de rendimiento y analítica empresarial</p>
         </div>
 
