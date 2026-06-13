@@ -13,13 +13,13 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
+            /* CAMBIO: Ahora el fondo es un color celeste suave y moderno */
+            background-color: #e3f2fd; 
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 15px; 
-            /* Evita por completo el desborde horizontal en móviles */
             overflow-x: hidden; 
         }
 
@@ -31,7 +31,6 @@
             max-width: 900px; 
             padding: 24px; 
             margin: auto;
-            /* Fuerza a la tarjeta a encogerse en pantallas pequeñas */
             flex-shrink: 1;
             min-width: 0; 
         }
@@ -53,7 +52,6 @@
             line-height: 1.4;
         }
 
-        /* CONTENEDOR DEL GIF */
         .gif-wrapper {
             width: 100%;
             overflow: hidden; 
@@ -65,20 +63,18 @@
             border-radius: 8px;
         }
 
-        /* EL GIF RESPONSIVO */
         .gif-wrapper img {
             width: 100%;
             max-width: 100%;
             height: auto;
             display: block;
-            object-fit: contain; /* Asegura que la imagen se mantenga en proporción */
+            object-fit: contain;
         }
 
-        /* Media query optimizado para smartphones */
         @media (max-width: 480px) {
             body {
                 padding: 10px;
-                align-items: flex-start; /* Mejor visualización si el contenido es largo */
+                align-items: flex-start;
             }
             .card-container {
                 padding: 16px;
@@ -97,8 +93,8 @@
 
     <div class="card-container">
         <div class="card-header">
-            <h1>Ingenieria LP</h1> 
-            <h2>Servicios de inenieria</h2>
+            <h1>INGENIERIA LP</h1 
+            <h2>Servicio de ingenieria</h2>
         </div>
 
         <div class="gif-wrapper">
